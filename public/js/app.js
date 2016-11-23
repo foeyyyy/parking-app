@@ -30,15 +30,23 @@ class Component extends App{
 	}
 	navbar(){
 		this.render(`
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     <a class="navbar-brand" href="#">
-        Home 
-      </a>
-    </div>
-  </div>
-</nav>
+		<div class="header clearfix">
+            <nav>
+              <ul class="nav nav-pills float-xs-right">
+                <li class="nav-item">
+                  <a class="nav-link active" href="app.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="component.showListCreate()">Create Your Parking List</a>
+                </li>
+
+                                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="component.showCreatedList()">View Your Created List</a>
+                </li>	
+              </ul>
+            </nav>
+          </div>
 			`,document.getElementById("app"));
 	}
 
@@ -47,11 +55,12 @@ class Component extends App{
 <div class="jumbotron">
   <h1>THE PARKING APP</h1>
   <p>by Jove Angelo Chin</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a></p>
+  <p><a class="btn btn-primary btn-lg" href="secondpage.html" role="button">Get Started</a></p>
 </div>
 			`,document.getElementById("app"));
 	}
-		footer(){
+	
+	footer(){
 		this.render(`
 <div class="panel panel-default">
   <div class="panel-body">
@@ -59,12 +68,11 @@ class Component extends App{
     email me at: joverelox@gmail.com <br>
     You can visit me on: https://github.com/foeyyyy
   </div>
-  <div class="panel-footer">@2016 Copyright text</div>
+  <div class="panel-footer">@2016 AMA Computer Colege - Davao</div>
 </div>
 			`,document.getElementById("app"));
 	}
 	
-
 
 
 }
