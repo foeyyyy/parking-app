@@ -4,7 +4,6 @@ class App{
 	constructor(){
 		this.content = [
 			{	
-				"id": 0,
 				"platenumber":"DELETE THIS!",
 				"timein":"EMPTY!",
 				"timeout":"EMPTY!",
@@ -30,7 +29,6 @@ class App{
 		let d = document.getElementById('newImage');
 	
 		let content = {
-			"id": this.content.length,
 			"platenumber":a.value,
 			"timein":b.value,
 			"timeout":c.value,
@@ -70,9 +68,9 @@ class App{
 		let c = document.getElementById('updateTimeOut');
 
 		let e = this.content[key];
-		let movie = {"platenumber":e.platenumber,"timein":b.value,"timeout":c.value};
+		let items = {"platenumber":e.platenumber,"timein":b.value,"timeout":c.value};
 
-		this.content[key] = movie;
+		this.content[key] = items;
 		let details = document.getElementById('listDetails');
 		details.innerHTML = "";
 		
@@ -290,7 +288,7 @@ class Component extends App{
 			html += `
 				<tr>
 					<td>${r[i].platenumber}</td>
-					<td><button class="btn btn-default" onclick="component.listDetails(${r[i].id})">Show Me More!</button></td>
+					<td><button class="btn btn-default" onclick="component.listDetails(${[i]})">Show Me More!</button></td>
 				</tr>
 			`;
 		}
@@ -306,7 +304,7 @@ class Component extends App{
 			html += `
 				<tr>
 					<td>${r[i].platenumber}</td>
-					<td><button class="btn btn-default" onclick="component.listDetails(${r[i].id})">Show Me More!</button></td>
+					<td><button class="btn btn-default" onclick="component.listDetails(${[i]})">Show Me More!</button></td>
 				</tr>
 			`;
 		$('#listInfo').hide();
