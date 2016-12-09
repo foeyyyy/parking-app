@@ -66,9 +66,10 @@ class App{
 	updateItem(key){
 		let b = document.getElementById('updateTimeIn');
 		let c = document.getElementById('updateTimeOut');
+		let d = document.getElementById('updateImage');
 
 		let e = this.content[key];
-		let items = {"platenumber":e.platenumber,"timein":b.value,"timeout":c.value};
+		let items = {"platenumber":e.platenumber,"timein":b.value,"timeout":c.value,"image":d.value};
 
 		this.content[key] = items;
 		let details = document.getElementById('listDetails');
@@ -357,6 +358,7 @@ class Component extends App{
 				<h4 class="media-heading">${this.content[key].platenumber}</h4>
 		        Time In: <input id="updateTimeIn" type="text" value="${this.content[key].timein}" /><br/>
 				Time Out: <input id="updateTimeOut" type="text" value="${this.content[key].timeout}" /><br/>
+				Image: <input id="updateImage" type="text" value="${this.content[key].image}" /><br/>
 				<button class="btn btn-success" onclick="component.updateItem(${key})">Save</button>
 			`,document.getElementById('listDetailsInfo'));
 	}
